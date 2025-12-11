@@ -4,46 +4,44 @@ import 'package:flutter_projet/pages/product.dart';
 
 
 class ProductDetail extends StatelessWidget {
-  const ProductDetail({super.key, required this.product}); // Constructeur
+  const ProductDetail({super.key, required this.product}); 
 
-  final Product product; // Produit pour lequel afficher les détails
-
+  final Product product; 
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-        // Titre de la barre d'application avec le nom du produit
          title: Center(child: Text(product.name, style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold, color: Colors.white),)),
           backgroundColor: Colors.blue,
       ),
 body: Padding(
-        padding: const EdgeInsets.all(16.0), // Rembourrage autour du contenu
-        child: SingleChildScrollView( // Permet de faire défiler le contenu
+        padding: const EdgeInsets.all(16.0), 
+        child: SingleChildScrollView( 
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start, // Alignement à gauche
+            crossAxisAlignment: CrossAxisAlignment.start, 
             children: [
               Image.network(
-                product.imageUrl, // Affiche l'image du produit
-                height: 200, // Hauteur de l'image
-                width: double.infinity, // Largeur de l'image
-                fit: BoxFit.cover, // Ajuste l'image
+                product.imageUrl,
+                height: 200,
+                width: double.infinity,
+                fit: BoxFit.cover, 
               ),
-              const SizedBox(height: 20), // Espace entre l'image et le texte
+              const SizedBox(height: 20), 
               Text(
                 product.name,
                 style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
-              const SizedBox(height: 10), // Espace entre le nom et le prix
+              const SizedBox(height: 10), 
               Text(
                 '\$${product.price.toStringAsFixed(2)}',
                 style: const TextStyle(fontSize: 20, color: Colors.blueGrey),
               ),
-              const SizedBox(height: 20), // Espace avant la description
+              const SizedBox(height: 20), 
               Text(
                 product.description,
                 style: const TextStyle(fontSize: 16),
-                textAlign: TextAlign.justify, // Justifie le texte
+                textAlign: TextAlign.justify,
               ),
               Center(
                   child: Container(
@@ -60,7 +58,7 @@ body: Padding(
                               actions: [
                                 TextButton(
                                   onPressed: () {
-                                   Navigator.of(context).pop(); // Fermer le dialogue
+                                   Navigator.of(context).pop();
                                   },
                                   child: const Text('OK'),
                                 ),
@@ -68,21 +66,15 @@ body: Padding(
                             );
                             },
                           );
-                              //   // Affiche un SnackBar comme message de confirmation
-                              //   ScaffoldMessenger.of(context).showSnackBar(
-                              //   SnackBar(
-                              //   content: Text('Commande passée pour ${product.name}!'),
-                              //   duration: const Duration(seconds: 2),
-                              // ),
-                            // );
+                            
                               },
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.blueAccent, // Couleur de fond du bouton
-                          foregroundColor: Colors.white, // Couleur du texte lorsque le bouton est actif
+                          backgroundColor: Colors.blueAccent,
+                          foregroundColor: Colors.white, 
                           shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20), // Arrondit les coins du bouton
+                          borderRadius: BorderRadius.circular(20),
                         ),
-                        padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0), // Espacement interne du bouton
+                        padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
                         ),
                         child: Text('Commander', style: TextStyle( fontWeight: FontWeight.bold)),
                         ),

@@ -12,8 +12,6 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(title: Text("AMEC", style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold, color: Colors.white),),
-      //     backgroundColor: Colors.blue, centerTitle: true,),
           
       body: Column(
         children: [
@@ -27,7 +25,6 @@ class _HomePageState extends State<HomePage> {
               child: Image.asset('images/logo.png', width: 500, height: 250,),
             ),
             
-            // SizedBox(height: 5), // Ajoute un espace entre les éléments
               Padding(
                     padding: const EdgeInsets.only(top: 60),
                     child: ElevatedButton(
@@ -35,17 +32,17 @@ class _HomePageState extends State<HomePage> {
                         Navigator.push(
                         context,
                         MaterialPageRoute(
-                        builder: (context) => ProductList(), // Passe le produit
+                        builder: (context) => ProductList(),
                         ),
                       );
                       },
                       style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.blueAccent, // Couleur de fond du bouton
-                          foregroundColor: Colors.white, // Couleur du texte lorsque le bouton est actif
+                          backgroundColor: Colors.blueAccent,
+                          foregroundColor: Colors.white,
                           shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20), // Arrondit les coins du bouton
+                          borderRadius: BorderRadius.circular(20),
                       ),
-                      padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0), // Espacement interne du bouton
+                      padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0), 
                     ),
                       child: Text('Liste des Produits', style: TextStyle( fontWeight: FontWeight.bold)),
                     ),

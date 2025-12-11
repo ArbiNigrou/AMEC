@@ -22,7 +22,6 @@ class ProductList extends StatelessWidget {
     Product(name: 'USB 64Go', price: 30.00, imageUrl: '/images/P13.jpg', description: 'Une clé USB de 64 Go pour davantage d’espace.',),
     Product(name: 'RAM', price: 90.00, imageUrl: '/images/P14.jpg', description: 'Un module de RAM rapide pour améliorer les performances de votre PC.',),
 
-    // Ajoutez d'autres produits ici
   ];
 
 
@@ -30,44 +29,40 @@ class ProductList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-      // Titre de la barre d'application
        title: Center(child: Text("Liste de Produits", style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold, color: Colors.white),)),
           backgroundColor: Colors.blue,
       ),
 body: ListView.builder(
-        itemCount: products.length, // Nombre d'éléments dans la liste
+        itemCount: products.length, 
         itemBuilder: (context, index) {
-          // Construction de chaque élément de la liste
           final product = products[index];
           return Card(
-            margin: const EdgeInsets.all(8.0), // Espacement autour de chaque carte
+            margin: const EdgeInsets.all(8.0), 
             child: ListTile(
               leading: Image.network(
-                product.imageUrl, // Affiche l'image du produit
-                width: 50, // Largeur de l'image
-                fit: BoxFit.cover, // Ajuste l'image pour couvrir la zone
+                product.imageUrl,
+                width: 50, 
+                fit: BoxFit.cover, 
               ),
-              title: Text(product.name), // Affiche le nom du produit
-              subtitle: Text('\$${product.price.toStringAsFixed(2)}'), // Affiche le prix avec 2 décimales
+              title: Text(product.name), 
+              subtitle: Text('\$${product.price.toStringAsFixed(2)}'), 
               trailing: ElevatedButton(
                 onPressed: (){
-                  // Navigue vers la page des détails du produit
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => ProductDetail(product: product), // Passe le produit
-                    ),
-                  );
+                      builder: (context) => ProductDetail(product: product), 
+                  ),);
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.blueAccent, // Couleur de fond du bouton
-                  foregroundColor: Colors.white, // Couleur du texte lorsque le bouton est actif
+                  backgroundColor: Colors.blueAccent, 
+                  foregroundColor: Colors.white, 
                   shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20),
                 ),
-                padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0), // Espacement interne du bouton
+                padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0), 
                 ),
-                 child: const Text('Détails', style: TextStyle(fontWeight: FontWeight.bold),), // Texte du bouton,
+                 child: const Text('Détails', style: TextStyle(fontWeight: FontWeight.bold),),
             ),
           ),
           );
