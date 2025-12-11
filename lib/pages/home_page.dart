@@ -13,7 +13,8 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
           
-      body: Column(
+      body: Center(
+        child: Column(
         children: [
               Padding(
                 padding: const EdgeInsets.only(top:40),
@@ -49,6 +50,6 @@ class _HomePageState extends State<HomePage> {
                   ),
         ],
       ),
-    );
+    ));
   }
 }
